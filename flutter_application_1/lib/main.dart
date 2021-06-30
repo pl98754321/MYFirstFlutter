@@ -1,3 +1,7 @@
+import 'dart:ui';
+import 'package:flutter_application_1/CreatedWid.dart';
+
+import 'Food.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "titlePLuem",
         home: MyHomepage(),
-        theme: ThemeData(primaryColor: Colors.green.shade50));
+        theme: ThemeData(primaryColor: Colors.green));
   }
 }
 
@@ -21,30 +25,26 @@ class MyHomepage extends StatefulWidget {
   _MyHomepageState createState() => _MyHomepageState();
 }
 
-class _MyHomepageState extends State<MyHomepage> {
+class _MyHomepageState extends State<MyHomepage> with Createwid {
+  int number = 2;
   @override
   Widget build(BuildContext context) {
-    int aa = 0;
     return Scaffold(
         appBar: AppBar(
           title: Text("AppbartitlePluem"),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text("column1"),
-              Text(
-                aa.toString(),
-                style: TextStyle(fontSize: 30, color: Colors.black),
-              )
-            ],
-          ),
-        ),
+            child: ListView(
+          children: getlist(number),
+        )),
         floatingActionButton: FloatingActionButton(onPressed: () {
-          setState(() {
-            aa++;
-          });
+          addnum();
         }));
+  }
+
+  void addnum() {
+    return setState(() {
+      number++;
+    });
   }
 }
