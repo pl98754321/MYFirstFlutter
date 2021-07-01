@@ -5,6 +5,7 @@ import 'Food.dart';
 import 'package:flutter/material.dart';
 
 class Createwid {
+//เก็บเนื้อหาเรื่อง list
   List<Widget> getlist(int num) {
     List<Widget> data = [];
     for (int i = 0; i < num; i++) {
@@ -15,12 +16,4 @@ class Createwid {
     }
     return data;
   }
-
-  Widget Buil = ListView.builder(
-      itemCount: 5,
-      itemBuilder: (BuildContext context, int index) {
-        return ListTile(
-          title: Text("เมนูที่${index + 1}"),
-        );
-      });
 }

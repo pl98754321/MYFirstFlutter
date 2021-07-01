@@ -27,6 +27,8 @@ class MyHomepage extends StatefulWidget {
 
 class _MyHomepageState extends State<MyHomepage> with Createwid {
   int number = 2;
+
+  //แสดงผล
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,17 +36,34 @@ class _MyHomepageState extends State<MyHomepage> with Createwid {
           title: Text("AppbartitlePluem"),
         ),
         body: Center(
-            child: ListView(
-          children: getlist(number),
-        )),
-        floatingActionButton: FloatingActionButton(onPressed: () {
-          addnum();
-        }));
+          child: ListView.builder(
+              itemCount: listFood.length,
+              itemBuilder: (BuildContext context, int index) {
+                Food Afood = listFood[index];
+                return ListTile(
+                  title: Text("เมนู ${Afood.name}"),
+                  subtitle: Text("ราคา ${Afood.price}"),
+                );
+              }),
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {},
+          label: Text("Testeiei"),
+          icon: Icon(Icons.add),
+        ));
   }
 
+  //ฟังก์ชั่นเพิ่มตัวเลข
   void addnum() {
     return setState(() {
       number++;
     });
   }
+
+  //listFood
+  List<Food> listFood = [
+    Food('Fried Riec', 50),
+    Food('Fried Chicken', 20),
+    Food('Empowered Egg', 300),
+  ];
 }
