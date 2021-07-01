@@ -1,5 +1,6 @@
 class Food {
   String name;
   int price;
-  Food(this.name, this.price) {}
+  String locate;
+  Food(this.name, this.price, this.locate) {}
 }
