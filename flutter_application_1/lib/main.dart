@@ -33,6 +33,13 @@ class _MyHomepageState extends State<MyHomepage> with Createwid {
     Food('Empowered Egg', 300, "assets/image/egg.jpg"),
   ];
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print("เริ่มใช้งานinitstate");
+  }
+
   //แสดงผล
   @override
   Widget build(BuildContext context) {
@@ -53,6 +60,7 @@ class _MyHomepageState extends State<MyHomepage> with Createwid {
     //Height of contrainer bodytype2
     double hei = 100;
 
+    //bodywidget
     Widget Buil1 = Padding(
       padding: EdgeInsets.all(10),
       child: Column(
