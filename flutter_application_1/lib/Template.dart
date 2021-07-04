@@ -7,7 +7,6 @@ class ConTem1 extends StatelessWidget {
   int money = 0, number = 1;
   double hei = 20, Pad = 5;
   Color colorI = Colors.black;
-
   ConTem1(this.text, this.money, this.hei, this.colorI, this.number);
 
   @override
@@ -47,6 +46,7 @@ class ConTem1 extends StatelessWidget {
         height: Pad,
       ));
     }
+
     return Column(
       children: inner,
     );
