@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(Myapp)
+  runApp(Myapp())
 }
 
 class Myapp extends StatelessWidget {
@@ -10,10 +10,29 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return MaterialApp(
+      title: "App2",
+      home: Myhome(),
+      theme: ThemeData(primaryColor: Colors.pink),
       
-    )
+    );
       
     
+  }
+}
+
+class Myhome extends StatefulWidget {
+  const Myhome({ Key? key }) : super(key: key);
+
+  @override
+  _MyhomeState createState() => _MyhomeState();
+}
+
+
+/////////////////////////////////
+class _MyhomeState extends State<Myhome> {
+  @override
+  Widget build(BuildContext context) {
+    return 
   }
 }
